@@ -3,7 +3,11 @@
 </script>
 
 <template>
+  <main>
+
+    <h2 class="h2">Your new incident</h2>
 <form>
+  <input type="datetime" name="date" id="date" placeholder="Fecha">
   <div class="form-group">
     
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
@@ -17,9 +21,43 @@
     <textarea class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3"></textarea>
 
   </div>
+
+  <div id="buttons-box">
+    <button type="button" class="btn btn-danger" id="cancel">Cancel</button>
+    <button type="button" class="btn btn-warning" id="reset">Reset</button>
+    <button type="button" class="btn btn-success" id="send">Send</button>
+  </div>
+
 </form>
+</main>
 </template>
 
 <style lang="scss">
-  
+@import '../sass/styles.scss';
+main{
+  margin-top: 5%;
+  h2{
+    margin-left: 5%;
+    color:$color
+  }
+  form{
+    margin: 3%;
+    display: grid;
+    #date{
+      margin-left: 3%;
+      width: 10vw;
+    }
+      .form-group{
+        margin: 1% 3% 1% 3%;
+      }
+     #buttons-box{
+      display: flex;
+      justify-content: flex-end;
+        button{
+          margin: 1%;
+        }
+     } 
+  }
+}
+
 </style>

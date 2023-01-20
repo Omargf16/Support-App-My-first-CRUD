@@ -1,24 +1,38 @@
 <script setup>
 
+window.onload = function formDate(){
+let today = new Date();
+
+let day = today.getDate();
+let month = today.getMonth() + 1;
+let year = today.getFullYear();
+
+day = ('0' + day).slice(-2);
+month = ('0' + month).slice(-2);
+
+let printDate = `${day}/${month}/${year}`
+
+ document.getElementById("date").innerHTML = printDate;
+}
 </script>
 
 <template>
   <main>
 
-    <h2 class="h2">Your new incident</h2>
+    <h2>Your new incident</h2>
 <form>
-  <input type="datetime" name="date" id="date" placeholder="Fecha">
+  <label for="date" id="date"></label>
   <div class="form-group">
     
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name" required>
   </div>
   <div class="form-group">
     
-    <input type="text" class="form-control form-control-lg" id="formGroupExampleInput2" placeholder="Write a subject">
+    <input type="text" class="form-control form-control-lg" id="formGroupExampleInput2" placeholder="Write a subject" required>
   </div>
 
   <div class="form-group">
-    <textarea class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3"></textarea>
+    <textarea class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3" required></textarea>
 
   </div>
 
@@ -36,9 +50,13 @@
 @import '../sass/styles.scss';
 main{
   margin-top: 5%;
+  font-family: 'Space Mono', monospace;
   h2{
     margin-left: 5%;
-    color:$color
+    color:$color;
+    font-weight: bold;
+    font-size: 2.2rem;
+    
   }
   form{
     margin: 3%;
@@ -53,6 +71,7 @@ main{
      #buttons-box{
       display: flex;
       justify-content: flex-end;
+      margin-right: 2%;
         button{
           margin: 1%;
         }

@@ -9,8 +9,7 @@ public class MysqlConnexion {
     private String driver = "com.mysql.cj.jdbc.Driver";
 
     // Con xampp - port: 3306
-    private String url = "jdbc:mysql://localhost:3306/java_tests_servlets?" +
-            "useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private String url = "jdbc:mysql://localhost:3306/incidences";
 
     public MysqlConnexion() {
         if (conn == null) {
@@ -18,15 +17,13 @@ public class MysqlConnexion {
         }
     }
 
-    private void getConnection() {
-        
+    private void getConnection() {      
         try {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, "root", "");
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
-
     }
     
 

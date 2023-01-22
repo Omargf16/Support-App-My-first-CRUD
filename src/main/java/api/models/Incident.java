@@ -12,7 +12,7 @@ import api.repositories.mysql.MysqlConnexion;
 
 public class Incident {
 
-    private Long id;
+    private int id;
     private String name;
 
     MysqlConnexion repository = new MysqlConnexion();;
@@ -21,16 +21,16 @@ public class Incident {
     public Incident() {
     }
 
-    public Incident(String name, Long id) {
+    public Incident(String name, int id) {
         this.name = name;
         this.id = id;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -58,8 +58,11 @@ public class Incident {
 
             while (rs.next()) {
                 IncidentPayload incident = new IncidentPayload();
-                incident.setId(rs.getLong("id_incidence"));
+                incident.setId(rs.getInt("id_incidence"));
                 incident.setName(rs.getString("name"));
+                incident.setSubject(rs.getString("subject"));
+                incident.setDescripcion(rs.getString("descripcion"));
+                incident.setDate(rs.getDate("date"));;
                 incidents.add(incident);
             }
 
@@ -88,7 +91,7 @@ public class Incident {
         ResultSet rs = statement.executeQuery(sql);
 
         while (rs.next()) {
-            incident.setId(rs.getLong("id_incidence"));
+            incident.setId(rs.getInt("id_incidence"));
             incident.setName(rs.getString("name"));
         }
         

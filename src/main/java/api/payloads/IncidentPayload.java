@@ -1,20 +1,22 @@
 package api.payloads;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class IncidentPayload {
     
-    private Long id;
-    private Date date = new Date();
+    private int id;
+    private String date;
     private String name;
     private String subject;
     private String descripcion;
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
     public void setDate(Date date) {
-        this.date = date;
+        SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");
+        this.date = formatDate.format(date);
     }
     public String getSubject() {
         return subject;
@@ -28,10 +30,10 @@ public class IncidentPayload {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getName() {

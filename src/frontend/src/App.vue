@@ -1,17 +1,8 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import LandingPage from './views/LandingPage.vue';
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+  import { RouterLink, RouterView } from 'vue-router'
+  import LandingPage from './views/LandingPage.vue';
 </script>
 
 <template>
-<Header></Header>
-<LandingPage/>
-<Footer></Footer>
-<ButtonsLanding/>
+  <LandingPage />
 </template>
-
-<style scoped>
-</style>
-

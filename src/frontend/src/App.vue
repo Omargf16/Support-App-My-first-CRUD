@@ -1,10 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import NewIncident from './views/NewIncident.vue';
+import ModifyIncident from './views/ModifyIncident.vue';
 </script>
 
 <template>
-<NewIncident />
+<ModifyIncident />
 </template>
 
 <style scoped>

@@ -19,7 +19,7 @@ let printDate = `${day}/${month}/${year}`
 <template>
   <main>
 
-    <h2>Your new incident</h2>
+    <h2>Modify your incident</h2>
 <form>
   <label for="date" id="date"></label>
   <div class="form-group">

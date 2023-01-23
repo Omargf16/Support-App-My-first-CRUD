@@ -12,11 +12,13 @@ const router = createRouter({
       name: 'LandingPage',
       component: LandingPage
     },
+    {
+      path: '/ModifyIncident',
       name: 'ModifyIncident',
       component: ModifyIncident
     },
     {
-      path: '/',
+      path: '/NewIncident',
       name: 'NewIncident',
       component: NewIncident
     }

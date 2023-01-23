@@ -19,8 +19,15 @@
 
             <div id="issueTextBox" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                 <div class="accordion-body">
+                    <div id="userName" class="fs-5 fw-bold">
+                        Sent by:
+                    </div>
                     blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla 
                 </div>
+                <div class="d-md-flex justify-content-md-end">
+                    <button id="modifyButton" class="rounded border border-0 bg-info mx-3 my-2 btn btn-lg">Modify</button>
+                </div>
+                
             </div>
         </div>
     </div>

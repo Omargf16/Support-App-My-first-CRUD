@@ -15,8 +15,8 @@ const props = defineProps ({
   <header id="header">
     <h1 id="titleHeader">FACTORÍA F5</h1>
     <div id="twoButtonsHeader">
-    <button type="buttonAllIncidents" id="buttonAll" class="btn btn-light btn-lg">All Incidents</button>
-    <button type="buttonNewIncident" id="buttonNew" class="btn btn-light btn-lg">New Incident</button>
+    <button type="buttonAllIncidents" id="buttonAll" class="btn text-primary btn-light btn-lg  button">All Incidents</button>
+    <button type="buttonNewIncident" id="buttonNew" class="btn text-primary btn-light btn-lg button">New Incident</button>
   </div>
   </header>
 </template>
@@ -26,48 +26,72 @@ const props = defineProps ({
 #header{
     background: url(../assets/img/bckground.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 25vh;
-
+    background-size: cover;
+    height: 30vh;
   
 }
+
 #titleHeader{
+  display: flex;
+  flex-direction: column;
+  align-self: space-around;
   font-weight: bold;
   color: white;
-  font-size: 300%;
+  font-size: 500%;
+  text-align: end;
   text-align-last: right;
-  margin-right: 7%;
-
-
+  margin-right: 10%;
+  padding-top:3%;
 
 }
+
 #twoButtonsHeader{
   display: flex;
   justify-content: right;
   flex-direction: row;
-  flex-wrap: wrap;
-
-
-
+  cursor: pointer;
 }
-#buttonAll{
+ 
+
+
+.button{
+  width: 300px;
   border: 0.3vh;
   border-style: solid;
   border-color: orangered;
-  font-size:x-large;
+  font-size:xx-large;
   font-weight: bold;
-  color:blue;
-  margin-right: 3%;
+  margin-right: 5%;
+  transition: all 0.4s;
 
 }
-#buttonNew{
-  border: 0.3vh;
-  border-style: solid;
-  border-color: orangered;
-  font-size: x-large;
-  font-weight: bold;
+
+
+  .button:hover{
+  cursor: pointer;
   color: orangered;
-  margin-right: 3%;
+  background-color: white;
+  letter-spacing: 1px;
+  }
+
+  @media (max-width: 690px) {
+    #twoButtonsHeader{
+  flex-direction: column;
+  align-items: center;
+  margin:auto;
+  gap: 25px;
 }
+#header{
+    height: auto;
+   
+}
+
+  }
+  @media (max-width: 500px) {
+
+    h1{
+      font-size: 3rem !important;
+    }
+  }
 
 </style>

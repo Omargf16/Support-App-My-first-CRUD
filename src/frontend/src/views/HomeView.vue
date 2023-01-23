@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import textBox from '../components/textBox.vue';
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <textBox/>
 </template>
+
+<style lang="scss" scoped>
+  
+</style>

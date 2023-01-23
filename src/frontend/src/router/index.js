@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
+import LandingPage from '../views/LandingPage.vue'
 import ModifyIncident from '../views/ModifyIncident.vue';
 import NewIncident from '../views/NewIncident.vue';
 
@@ -7,6 +9,9 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'LandingPage',
+      component: LandingPage
+    },
       name: 'ModifyIncident',
       component: ModifyIncident
     },
@@ -15,7 +20,6 @@ const router = createRouter({
       name: 'NewIncident',
       component: NewIncident
     }
-   
   ]
 })
 

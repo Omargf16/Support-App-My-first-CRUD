@@ -5,7 +5,7 @@ import {RouterLink} from "vue-router"
   <header id="LandingPage">
     <h1 id="titleLanding">FACTORÍA F5</h1>
     <div id="twoButtons">
-    <button type="buttonHome" id="button1" class="btn text-primary btn-light btn-lg button">All Incidents</button>
+    <button type="buttonHome" id="button1" class="btn text-primary btn-light btn-lg button"><RouterLink to="/HomeView">All Incidents</RouterLink></button>
     <button type="buttonNew" id="button2" class="btn text-primary btn-light btn-lg button"><RouterLink to="/NewIncident">New Incident</RouterLink></button>
   </div>
   </header>

@@ -1,11 +1,8 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HomeView from './views/HomeView.vue';
+  import { RouterLink, RouterView } from 'vue-router'
+  import LandingPage from './views/LandingPage.vue';
 </script>
 
 <template>
-  <RouterView />
+  <LandingPage/>
 </template>
-
-<style scoped>
-</style>

@@ -1,0 +1,8 @@
+api\payloads\IncidentPayload.class
+api\views\View.class
+api\controllers\IncidentController.class
+api\repositories\mysql\MysqlConnexion.class
+api\contracts\InterfaceService.class
+api\models\Incident.class
+api\services\IncidentService.class
+api\models\Message.class

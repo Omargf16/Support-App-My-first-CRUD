@@ -5,7 +5,9 @@
   </template>
     
   <style scoped>
-  
+  #Footer{
+    margin-top: 2vh;
+  }
 
 
 #titleFooter{

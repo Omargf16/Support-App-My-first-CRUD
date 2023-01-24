@@ -1,5 +1,6 @@
 <script setup>
-
+import Header from "../components/Header.vue"
+import Footer from "../components/Footer.vue"
 window.onload = function formDate(){
 let today = new Date();
 
@@ -17,8 +18,9 @@ let printDate = `${day}/${month}/${year}`
 </script>
 
 <template>
+  <Header></Header>
   <main>
-
+    
     <h2>Your new incident</h2>
 <form>
   <label for="date" id="date"></label>
@@ -44,6 +46,7 @@ let printDate = `${day}/${month}/${year}`
 
 </form>
 </main>
+<Footer></Footer>
 </template>
 
 <style lang="scss">

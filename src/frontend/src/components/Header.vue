@@ -37,10 +37,10 @@ const props = defineProps ({
   align-self: space-around;
   font-weight: bold;
   color: white;
-  font-size: 500%;
+  font-size: 400%;
   text-align: end;
   text-align-last: right;
-  margin-right: 10%;
+  margin-right: 15%;
   padding-top:3%;
 
 }

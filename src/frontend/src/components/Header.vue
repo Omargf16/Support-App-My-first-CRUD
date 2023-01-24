@@ -28,7 +28,7 @@ const props = defineProps ({
     background-repeat: no-repeat;
     background-size: cover;
     height: 30vh;
-  
+  margin-bottom: 2vh;
 }
 
 #titleHeader{

@@ -36,4 +36,17 @@ public class IncidentService implements InterfaceService {
         }
 
     }
+    @Override
+    public Object update(BufferedReader body) {
+
+        try {
+            IncidentPayload incidentPayload = gson.fromJson(body, IncidentPayload.class);
+            IncidentPayload incidentUpdated = incident.updating(incidentPayload);
+            return incidentUpdated;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return null;
+        }
+
+    }
 }

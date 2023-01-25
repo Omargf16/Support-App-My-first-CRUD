@@ -79,15 +79,38 @@ public class Incident {
 
         String sql_insert = "INSERT INTO incidences (date, name, subject, descripcion) VALUES (?,?,?,?)";
         PreparedStatement preparedStatement = repository.conn.prepareStatement(sql_insert);
-        preparedStatement.setString(1, "2023-01-20");
+        preparedStatement.setString(1, incident.getDate());
         preparedStatement.setString(2, incident.getName());
-        preparedStatement.setString(3, "probando post");
-        preparedStatement.setString(4, "si lees esto es que funciona");
+        preparedStatement.setString(3, incident.getSubject());
+        preparedStatement.setString(4, incident.getDescripcion());
         preparedStatement.executeUpdate();
         preparedStatement.close();
 
         Statement statement = repository.conn.createStatement();
         String sql = String.format("SELECT * FROM %s ORDER BY id_incidence DESC LIMIT 1", table);
+        ResultSet rs = statement.executeQuery(sql);
+
+        while (rs.next()) {
+            incident.setId(rs.getInt("id_incidence"));
+            incident.setName(rs.getString("name"));
+        }
+        
+        return incident;
+    }
+    public IncidentPayload updating(IncidentPayload incident) throws SQLException {
+
+        String sql_insert = "UPDATE incidences SET date=?, name=?, subject=?, descripcion=? WHERE id_incidence=?";
+        PreparedStatement preparedStatement = repository.conn.prepareStatement(sql_insert);
+        preparedStatement.setString(1, incident.getDate());
+        preparedStatement.setString(2, incident.getName());
+        preparedStatement.setString(3, incident.getSubject());
+        preparedStatement.setString(4, incident.getDescripcion());
+        preparedStatement.setInt(5, incident.getId());
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+
+        Statement statement = repository.conn.createStatement();
+        String sql = String.format("SELECT * FROM %s WHERE id_incidence=%d ORDER BY id_incidence DESC LIMIT 1", table, incident.getId());
         ResultSet rs = statement.executeQuery(sql);
 
         while (rs.next()) {

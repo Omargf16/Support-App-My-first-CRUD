@@ -8,5 +8,6 @@ public interface InterfaceService {
     public List<Object> index();
     public Object store(BufferedReader body);
     public Object update(BufferedReader body);
+    public Object delete(BufferedReader body);
 
 }

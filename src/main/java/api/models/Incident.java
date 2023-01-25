@@ -97,6 +97,7 @@ public class Incident {
         
         return incident;
     }
+
     public IncidentPayload updating(IncidentPayload incident) throws SQLException {
 
         String sql_insert = "UPDATE incidences SET date=?, name=?, subject=?, descripcion=? WHERE id_incidence=?";
@@ -117,6 +118,20 @@ public class Incident {
             incident.setId(rs.getInt("id_incidence"));
             incident.setName(rs.getString("name"));
         }
+        
+        return incident;
+    }
+
+    public IncidentPayload deleting(IncidentPayload incident) throws SQLException {
+
+        String sql_insert = "DELETE FROM incidences WHERE id_incidence=?";
+        PreparedStatement preparedStatement = repository.conn.prepareStatement(sql_insert);
+        preparedStatement.setInt(1, incident.getId());
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+
+        incident.setId(incident.getId());
+        incident.setName("Delete");
         
         return incident;
     }

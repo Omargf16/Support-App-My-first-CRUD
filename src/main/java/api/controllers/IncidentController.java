@@ -60,6 +60,7 @@ public class IncidentController extends HttpServlet {
         }
 
     }
+
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -75,6 +76,22 @@ public class IncidentController extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             System.out.println("Error: " + e.getMessage());
         }
+    }
 
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("application/json;charset=utf-8");
+        PrintWriter out = resp.getWriter();
+
+        try {
+            
+            Object incident = incidentService.delete(req.getReader());
+            out.println(View.show(incident));
+            resp.setStatus(HttpServletResponse.SC_ACCEPTED);
+        } catch (Exception e) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }

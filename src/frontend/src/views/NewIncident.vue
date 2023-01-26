@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import Header from "../components/Header.vue"
 import Footer from "../components/Footer.vue"
 window.onload = function formDate(){
@@ -13,8 +14,20 @@ month = ('0' + month).slice(-2);
 
 let printDate = `${day}/${month}/${year}`
 
- document.getElementById("date").innerHTML = printDate;
-}
+document.getElementById("date").innerHTML = printDate
+};
+
+
+let inputReset = ref("");
+let inputReset2 = ref("");
+let resetTextarea = ref("")
+
+ function resetForm(){
+inputReset.value = "";
+inputReset2.value = "";
+resetTextarea.value = "";
+} 
+
 </script>
 
 <template>
@@ -22,25 +35,25 @@ let printDate = `${day}/${month}/${year}`
   <main>
     
     <h2>Your new incident</h2>
-<form>
+<form id="form">
   <label for="date" id="date"></label>
   <div class="form-group">
     
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name" required>
+    <input v-model="inputReset" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name" required>
   </div>
   <div class="form-group">
     
-    <input type="text" class="form-control form-control-lg" id="formGroupExampleInput2" placeholder="Write a subject" required>
+    <input v-model="inputReset2" type="text" class="form-control form-control-lg" id="formGroupExampleInput2" placeholder="Write a subject" required>
   </div>
 
   <div class="form-group">
-    <textarea class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3" required></textarea>
+    <textarea v-model="resetTextarea" class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3" required></textarea>
 
   </div>
 
   <div id="buttons-box">
     <button type="button" class="btn btn-danger" id="cancel">Cancel</button>
-    <button type="button" class="btn btn-warning" id="reset">Reset</button>
+    <button type="button" class="btn btn-warning" id="reset" @click="resetForm()">Reset</button>
     <button type="button" class="btn btn-success" id="send">Send</button>
   </div>
 

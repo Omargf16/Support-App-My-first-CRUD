@@ -1,5 +1,5 @@
 <script setup>
-
+import { ref } from "vue";
 window.onload = function formDate(){
 let today = new Date();
 
@@ -14,6 +14,16 @@ let printDate = `${day}/${month}/${year}`
 
  document.getElementById("date").innerHTML = printDate;
 }
+
+let inputReset = ref("");
+let inputReset2 = ref("");
+let resetTextarea = ref("")
+
+ function resetForm(){
+inputReset.value = "";
+inputReset2.value = "";
+resetTextarea.value = "";
+} 
 </script>
 
 <template>
@@ -24,15 +34,15 @@ let printDate = `${day}/${month}/${year}`
   <label for="date" id="date"></label>
   <div class="form-group">
     
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name" required>
+    <input v-model="inputReset" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name" required>
   </div>
   <div class="form-group">
     
-    <input type="text" class="form-control form-control-lg" id="formGroupExampleInput2" placeholder="Write a subject" required>
+    <input v-model="inputReset2" type="text" class="form-control form-control-lg" id="formGroupExampleInput2" placeholder="Write a subject" required>
   </div>
 
   <div class="form-group">
-    <textarea class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3" required></textarea>
+    <textarea v-model="resetTextarea" class="form-control form-control-lg" id="formGroupExampleInput3" placeholder="Write your commentary" rows="3" required></textarea>
 
   </div>
 

@@ -71,7 +71,7 @@ public class IncidentController extends HttpServlet {
             
             Object incident = incidentService.update(req.getReader());
             out.println(View.show(incident));
-            resp.setStatus(HttpServletResponse.SC_ACCEPTED);
+            resp.setStatus(HttpServletResponse.SC_OK);
         } catch (Exception e) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             System.out.println("Error: " + e.getMessage());
@@ -88,7 +88,7 @@ public class IncidentController extends HttpServlet {
             
             Object incident = incidentService.delete(req.getReader());
             out.println(View.show(incident));
-            resp.setStatus(HttpServletResponse.SC_ACCEPTED);
+            resp.setStatus(HttpServletResponse.SC_OK);
         } catch (Exception e) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             System.out.println("Error: " + e.getMessage());

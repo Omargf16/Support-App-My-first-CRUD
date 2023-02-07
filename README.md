@@ -61,6 +61,7 @@ Also we use Visual Studio Code to implement the code used on all the pages and t
 we also use Vue, SCSS, JAVA and css framwork.
 
 FIGMA URL: https://www.figma.com/file/CFru09tHcqIXUDzQkA1MR8/Support-App?node-id=0%3A1&t=q1zPHU76Xa7EhiY1-0
+
 JIRA URL:  https://omargf16.atlassian.net/jira/software/projects/SA/boards/2/roadmap
 
 This app could not have been done without the collaboration of Gabriel mendez, Bryan joel, Andres perez, Johnny ramirez sancho, Natalia calvo y Omar González.
